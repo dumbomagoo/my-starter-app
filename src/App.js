@@ -5,14 +5,15 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {value: 'there'};
 
     this.help = this.help.bind(this);
   }
 
   help(event){
     console.log(`HELP`);
-    this.setState({value: event.target.value});
+    const value = event.target.value || 'there';
+    this.setState({value});
   }
 
   render() {
