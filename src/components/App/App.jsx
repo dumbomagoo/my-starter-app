@@ -11,8 +11,7 @@ class App extends Component {
     this.help = this.help.bind(this);
   }
 
-  help(event){
-    console.log(`HELP`);
+  help(event) {
     const value = event.target.value || 'there';
     this.setState({value});
   }
