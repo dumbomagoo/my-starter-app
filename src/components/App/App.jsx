@@ -4,19 +4,19 @@ import Hello from '../Hello/Hello';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {value: 'there'};
 
     this.help = this.help.bind(this);
   }
 
-  help(event) {
+  help (event) {
     const value = event.target.value || 'there';
     this.setState({value});
   }
 
-  render() {
+  render () {
     return (
       <div className="App">
         <header className="App-header">
