@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import AppContainer from './containers/AppContainer';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, compose } from 'redux';
 import rootReducer from './reducers';
+import { Provider } from 'react-redux';
+import getRoutes from './routes'
 
 const getNewStore = () => {
   const middlewares = [];
@@ -15,5 +16,9 @@ const getNewStore = () => {
   return finalCreateStore(rootReducer, {});
 };
 
-ReactDOM.render(<AppContainer store={getNewStore()}/>, document.getElementById('root'));
+ReactDOM.render(<Provider store={getNewStore()}>
+    {getRoutes()}
+  </Provider>, 
+  document.getElementById('root')
+);
 registerServiceWorker();
