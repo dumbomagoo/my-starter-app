@@ -1,12 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import AppContainer from '../containers/AppContainer';
+import Favorites from '../components/Favorites/Favorites';
 
 const getRoutes = () => (
   <BrowserRouter>
-    <div>
-      <Route path="/" component={AppContainer}/>
-    </div>
+    <Switch>
+      <Route exact path="/">
+        <Redirect to="/hello"/>
+      </Route>
+      <Route path="/hello" component={AppContainer}/>
+      <Route path="/profile" component={Favorites}/>
+    </Switch>
   </BrowserRouter>
 );
 
