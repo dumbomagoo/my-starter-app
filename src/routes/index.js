@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import AppContainer from '../containers/AppContainer';
-import Favorites from '../components/Favorites/Favorites';
+import FavoritesContainer from '../containers/FavoritesContainer';
 
 const getRoutes = () => (
   <BrowserRouter>
@@ -10,7 +10,7 @@ const getRoutes = () => (
         <Redirect to="/hello"/>
       </Route>
       <Route path="/hello" component={AppContainer}/>
-      <Route path="/profile" component={Favorites}/>
+      <Route path="/profile" component={FavoritesContainer}/>
     </Switch>
   </BrowserRouter>
 );

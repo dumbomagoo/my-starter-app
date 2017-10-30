@@ -1,13 +1,9 @@
 import React from 'react';
-import HeaderButton from '../HeaderButton/HeaderButton';
-import './Favorites.css';
+import Header from '../Header/Header';
 
 const Favorites = props => (
   <div>
-    <div className={'profile-header'}>
-      <h1>{'Welcome You'}</h1>
-      <HeaderButton label="Home" path="/" />
-    </div>
+    <Header name={props.visitorInfo.name} />
     <p>
       {'What is your favorite clam?'}
     </p>
