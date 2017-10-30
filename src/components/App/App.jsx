@@ -12,7 +12,7 @@ const App = ({ changeName, visitorInfo }) => {
       <Header name={visitorInfo.name} />
       <InputBox callMeMaybe={changeName} />
       <Hello name={visitorInfo.name}></Hello>
-      <VisitorInfo info={visitorInfo} />
+      <VisitorInfo favorites={visitorInfo.favorites} />
     </div>
   );
 }

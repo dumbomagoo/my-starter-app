@@ -13,6 +13,7 @@ const FavoriteChoice = props => {
   };
  
   return (
+    <div>
       <label>{question}
         <select name={favoriteType} onChange={triggerAction}>
           <option value={''}>Select one</option>
@@ -25,6 +26,7 @@ const FavoriteChoice = props => {
           }
         </select>
       </label>
+    </div>
   );
 };
 

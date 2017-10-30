@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import changeName from '../actions/changeNameAction';
-
 import App from '../components/App/App';
 
 const mapStateToProps = state => ({
