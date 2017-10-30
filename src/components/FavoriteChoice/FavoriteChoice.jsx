@@ -1,4 +1,5 @@
 import React from 'react';
+import './FavoriteChoice.css'
 
 const FavoriteChoice = props => {
   const {
@@ -13,17 +14,16 @@ const FavoriteChoice = props => {
   };
  
   return (
-    <div>
-      <label>{`What is your favorite ${favoriteType}`}
-        <select name={favoriteType} onChange={triggerAction} value={currentChoice}>
-          <option value={''}>Select one</option>
-          {
-            choices.map((choice, index) => (
-              <option key={`choice-${index}`} value={choice}>{choice}</option>
-            ))
-          }
-        </select>
-      </label>
+    <div className={'favorite-choice'}>
+      <span>{`What is your favorite ${favoriteType}?`} </span>
+      <select name={favoriteType} onChange={triggerAction} value={currentChoice}>
+        <option value={''}>Select one</option>
+        {
+          choices.map((choice, index) => (
+            <option key={`choice-${index}`} value={choice}>{choice}</option>
+          ))
+        }
+      </select>
     </div>
   );
 };

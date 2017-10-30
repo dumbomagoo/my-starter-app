@@ -1,8 +1,9 @@
 import React from 'react';
+import './Hello.css';
 
 const Hello = ({ name }) => (
-  <div data-something="whatever">
-    <p>{`Hello ${name}`}</p>
+  <div className={'hello'} data-something="whatever">
+    <h2>{`Hello ${name}`}</h2>
   </div>
 );
 
