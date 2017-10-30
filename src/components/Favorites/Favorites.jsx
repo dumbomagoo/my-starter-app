@@ -15,4 +15,10 @@ const Favorites = props => (
   </div>
 );
 
+Favorites.defaultProps = {
+  visitorInfo: {
+    name: ''
+  }
+};
+
 export default Favorites;
