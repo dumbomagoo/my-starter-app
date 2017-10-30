@@ -18,11 +18,9 @@ const FavoriteChoice = props => {
         <select name={favoriteType} onChange={triggerAction} value={currentChoice}>
           <option value={''}>Select one</option>
           {
-            choices.map((choice, index) => {
-              return (
-                <option key={`choice-${index}`} value={choice}>{choice}</option>
-              );
-            })
+            choices.map((choice, index) => (
+              <option key={`choice-${index}`} value={choice}>{choice}</option>
+            ))
           }
         </select>
       </label>
