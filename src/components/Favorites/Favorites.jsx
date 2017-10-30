@@ -1,17 +1,15 @@
 import React from 'react';
 import Header from '../Header/Header';
+import FavoriteChoice from '../FavoriteChoice/FavoriteChoice';
 
 const Favorites = props => (
   <div>
     <Header name={props.visitorInfo.name} />
-    <p>
-      {'What is your favorite clam?'}
-    </p>
-    <select>
-      <option>Quahogs</option>
-      <option>Razors</option>
-      <option>Steamers</option>
-    </select>
+    <FavoriteChoice 
+      favoriteType={'clam'}
+      question={'What is your favorite clam?'}
+      choices={['Quahogs', 'Razors', 'Steamers']}
+    />
   </div>
 );
 
