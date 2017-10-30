@@ -2,28 +2,42 @@ import React from 'react';
 import Header from '../Header/Header';
 import FavoriteChoice from '../FavoriteChoice/FavoriteChoice';
 
-const Favorites = props => (
-  <div>
-    <Header name={props.visitorInfo.name} />
-    <FavoriteChoice 
-      action={props.favoriteAction}
-      favoriteType={'clam'}
-      question={'What is your favorite clam?'}
-      choices={['Quahogs', 'Razors', 'Steamers']}
-    />
-    <FavoriteChoice 
-      action={props.favoriteAction}
-      favoriteType={'color'}
-      question={'What is your favorite color?'}
-      choices={['red', 'blue', 'yellow', 'orange', 'green', 'purple']}
-    />
-  </div>
-);
+const Favorites = props => {
+  const {
+    favoriteAction,
+    visitorInfo: { 
+      name, 
+      favorites
+    }
+  } = props;
+
+  const getDefaultChoiceFromProps = favoriteType => 
+    favorites[favoriteType] || '';
+
+  return (
+    <div>
+      <Header name={name} />
+      <FavoriteChoice 
+        action={favoriteAction}
+        currentChoice={getDefaultChoiceFromProps('clam')}
+        favoriteType={'clam'}
+        choices={['Quahogs', 'Razors', 'Steamers']}
+      />
+      <FavoriteChoice 
+        action={favoriteAction}
+        currentChoice={getDefaultChoiceFromProps('color')}
+        favoriteType={'color'}
+        choices={['red', 'blue', 'yellow', 'orange', 'green', 'purple']}
+      />
+    </div>
+  )
+};
 
 Favorites.defaultProps = {
   favoriteAction: () => {},
   visitorInfo: {
-    name: ''
+    name: '',
+    favorites: {}
   }
 };
 

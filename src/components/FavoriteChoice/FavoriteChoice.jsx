@@ -4,8 +4,8 @@ const FavoriteChoice = props => {
   const {
     action,
     choices,
-    favoriteType,
-    question
+    currentChoice,
+    favoriteType
   } = props;
 
   const triggerAction = event => {
@@ -14,13 +14,13 @@ const FavoriteChoice = props => {
  
   return (
     <div>
-      <label>{question}
-        <select name={favoriteType} onChange={triggerAction}>
+      <label>{`What is your favorite ${favoriteType}`}
+        <select name={favoriteType} onChange={triggerAction} value={currentChoice}>
           <option value={''}>Select one</option>
           {
             choices.map((choice, index) => {
               return (
-                <option key={index} value={choice}>{choice}</option>
+                <option key={`choice-${index}`} value={choice}>{choice}</option>
               );
             })
           }
@@ -33,8 +33,8 @@ const FavoriteChoice = props => {
 FavoriteChoice.defaultProps = {
   action: () => {},
   choices: [],
-  favoriteType: '',
-  question: ''
+  currentChoice: '',
+  favoriteType: ''
 }
 
 export default FavoriteChoice;

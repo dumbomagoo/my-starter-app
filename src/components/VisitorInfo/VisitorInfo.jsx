@@ -5,7 +5,7 @@ const VisitorInfo = ({ favorites = {} }) => (
   {
     Object.keys(favorites).map((item, index) => {
       return (
-        <p>{`Favorite ${item} is "${favorites[item]}"`}</p>
+        <p key={`favorite-${index}`}>{`Favorite ${item} is "${favorites[item]}"`}</p>
       );
     })
   }
