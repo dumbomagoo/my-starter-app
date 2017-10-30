@@ -3,17 +3,16 @@ import React from 'react';
 import Hello from '../Hello/Hello';
 import InputBox from '../InputBox/InputBox';
 import Header from '../Header/Header'
+import VisitorInfo from '../VisitorInfo/VisitorInfo';
 import './App.css';
 
 const App = ({ changeName, visitorInfo }) => {
   return (
     <div className="App">
       <Header name={visitorInfo.name} />
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
       <InputBox callMeMaybe={changeName} />
       <Hello name={visitorInfo.name}></Hello>
+      <VisitorInfo info={visitorInfo} />
     </div>
   );
 }
