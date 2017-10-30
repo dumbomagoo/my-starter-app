@@ -1,4 +1,5 @@
 import React from 'react';
+import './InputBox.css';
 
 const InputBox = props => {
   const { callMeMaybe } = props;
@@ -7,7 +8,12 @@ const InputBox = props => {
   };
 
   return (
-    <input type="text" onChange={helpMe}/>
+    <div className="help">
+      <span>
+      {'Enter your name'}
+      </span>
+      <input type="text" onChange={helpMe}/>
+    </div>
   );
 };
 
