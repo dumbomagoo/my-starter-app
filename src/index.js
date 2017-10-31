@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import registerServiceWorker from './registerServiceWorker';
-import { createStore, compose } from 'redux';
-import rootReducer from './reducers';
+import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+
+import rootReducer from './reducers';
 import getRoutes from './routes'
+import './index.css';
 
 const getNewStore = () => {
-  const middlewares = [];
+  const middlewares = [
+    applyMiddleware(thunk)
+  ];
+  
   const finalCreateStore = compose(
     ...middlewares
   )(createStore);

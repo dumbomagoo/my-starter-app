@@ -1,5 +1,5 @@
 import { CHANGE_NAME } from '../actions/changeNameAction';
-import { UPDATE_FAVORITE } from '../actions/favoriteActions';
+import { CLEAR_FAVORITES, UPDATE_FAVORITE } from '../actions/favoriteActions';
 
 const initialState = {
   favorites: {},
@@ -19,6 +19,9 @@ export default (state = initialState, action) => {
 
   if (type === UPDATE_FAVORITE) {
     newState.favorites[favoriteType] = favoriteValue;
+    
+  } else if (type === CLEAR_FAVORITES) {
+    newState.favorites = {};
   }
   
   return newState;
