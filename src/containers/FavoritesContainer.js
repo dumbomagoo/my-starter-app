@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Favorites from '../components/Favorites/Favorites';
-import updateFavorite from '../actions/updateFavoriteAction';
+import { update as updateFavorite } from '../actions/favoriteActions';
 
 const mapStateToProps = state => ({
   visitorInfo: state.visitor

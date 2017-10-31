@@ -1,5 +1,5 @@
 import { CHANGE_NAME } from '../actions/changeNameAction';
-import { UPDATE_FAVORITE } from '../actions/updateFavoriteAction';
+import { UPDATE_FAVORITE } from '../actions/favoriteActions';
 
 const initialState = {
   favorites: {},
