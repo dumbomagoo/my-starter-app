@@ -3,7 +3,7 @@ import { CLEAR_FAVORITES, UPDATE_FAVORITE } from '../actions/favoriteActions';
 
 const initialState = {
   favorites: {},
-  name: 'You'
+  name: ''
 };
 
 export default (state = initialState, action) => {
