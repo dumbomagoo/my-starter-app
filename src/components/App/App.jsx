@@ -1,6 +1,6 @@
 import React from 'react';
 import Hello from '../Hello/Hello';
-import InputBox from '../InputBox/InputBox';
+import NameInputBox from '../NameInputBox/NameInputBox';
 import Header from '../Header/Header'
 import VisitorInfo from '../VisitorInfo/VisitorInfo';
 import './App.css';
@@ -8,7 +8,7 @@ import './App.css';
 const App = ({ changeName, visitorInfo }) => (
   <div className="App">
     <Header name={visitorInfo.name} />
-    <InputBox callMeMaybe={changeName} />
+    <NameInputBox callMeMaybe={changeName} name={visitorInfo.name} />
     <Hello name={visitorInfo.name}></Hello>
     <VisitorInfo favorites={visitorInfo.favorites} />
   </div>
