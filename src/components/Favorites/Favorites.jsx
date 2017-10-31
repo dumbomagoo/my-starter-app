@@ -21,13 +21,19 @@ const Favorites = props => {
         action={favoriteAction}
         currentChoice={getDefaultChoiceFromProps('clam')}
         favoriteType={'clam'}
-        choices={['Quahogs', 'Razors', 'Steamers']}
+        choices={['Geoducks', 'Quahogs', 'Razors', 'Steamers']}
       />
       <FavoriteChoice 
         action={favoriteAction}
         currentChoice={getDefaultChoiceFromProps('color')}
         favoriteType={'color'}
         choices={['red', 'blue', 'yellow', 'orange', 'green', 'purple']}
+      />
+      <FavoriteChoice
+        action={favoriteAction}
+        currentChoice={getDefaultChoiceFromProps('number')}
+        favoriteType={'number'}
+        choices={['1','2','3','4','5']}
       />
     </div>
   )
