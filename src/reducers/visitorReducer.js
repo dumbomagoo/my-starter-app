@@ -9,20 +9,25 @@ const initialState = {
 export default (state = initialState, action) => {
   const { 
     type, 
-    favoriteType,
-    favoriteValue,
+    newFavorite,
     name
   } = action;
 
-  const newState = { ...state };
-  newState.name = type === CHANGE_NAME ? name : state.name;
-
-  if (type === UPDATE_FAVORITE) {
-    newState.favorites[favoriteType] = favoriteValue;
+  if (type === CHANGE_NAME) {
+    return { ...state, name };
+  }
+  else if (type === UPDATE_FAVORITE) {
+    return { 
+      ...state,
+      favorites: {
+        ...state.favorites,
+        ...newFavorite
+      }
+    };
     
   } else if (type === CLEAR_FAVORITES) {
-    newState.favorites = {};
+    return { ...state, favorites: {} };
   }
   
-  return newState;
+  return state;
 }
