@@ -20,7 +20,7 @@ const FavoriteChoice = props => {
         <option value={''}>Select one</option>
         {
           choices.map((choice, index) => (
-            <option key={`${favoriteType}-choice`} value={choice}>{choice}</option>
+            <option key={`${choice}-choice`} value={choice}>{choice}</option>
           ))
         }
       </select>
