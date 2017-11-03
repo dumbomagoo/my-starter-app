@@ -1,0 +1,13 @@
+.header-button {
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+  background: indianred;
+  color: #fff; 
+}
+
+.header-button:hover {
+  background: cornflowerblue;
+  cursor: pointer;
+}
+
