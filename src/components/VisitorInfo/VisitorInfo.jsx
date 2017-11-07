@@ -1,5 +1,5 @@
 import React from 'react';
-import './VisitorInfo.css';
+import './VisitorInfo.scss';
 
 const VisitorInfo = ({ favorites }) => (
   <div className={'visitor-info'}>

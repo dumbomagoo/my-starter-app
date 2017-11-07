@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.mobile {
+  @media screen and (min-width: 767px) {
+
+
+  }
+}
+
+.desktop {
+
+}

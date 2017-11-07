@@ -3,7 +3,7 @@ import Hello from '../Hello/Hello';
 import NameInputBox from '../NameInputBox/NameInputBox';
 import Header from '../Header/Header'
 import VisitorInfo from '../VisitorInfo/VisitorInfo';
-import './App.css';
+import './App.scss';
 
 const App = ({ changeName, visitorInfo }) => (
   <div className="App">

@@ -1,5 +1,5 @@
 import React from 'react';
-import './NameInputBox.css';
+import './NameInputBox.scss';
 
 const NameInputBox = ({ callMeMaybe, name }) => {
   const helpMe = event => {

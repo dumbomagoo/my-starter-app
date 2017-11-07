@@ -1,0 +1,21 @@
+.visitor-info {
+  text-align: left;
+  display: inline-block;
+  .border-magic {
+    display: inline-table;
+    border: black 2px solid;
+    .favorite-row {
+      display: table-row;
+      &:nth-child(odd) {
+        background-color: #cccccc;
+      }
+      &:nth-child(even) {
+        background-color: #eeeeee;
+      }
+      .favorite-cell {
+        display: table-cell;
+        padding: 5px;
+      }
+    }
+  }
+}

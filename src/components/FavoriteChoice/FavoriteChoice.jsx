@@ -1,5 +1,5 @@
 import React from 'react';
-import './FavoriteChoice.css'
+import './FavoriteChoice.scss'
 
 const FavoriteChoice = props => {
   const {

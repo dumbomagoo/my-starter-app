@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import './HeaderButton.css';
+import './HeaderButton.scss';
 
 const HeaderButton = ({ label, path }) => (
-  <Link to={path}>
-    <button className={'header-button'}>{label}</button>
+  <Link to={path} className={'header-button'}>
+    <button>{label}</button>
   </Link>
 );
 
