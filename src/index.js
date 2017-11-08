@@ -5,6 +5,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
+import Root from './components/Root/Root';
 import rootReducer from './reducers';
 import getRoutes from './routes'
 import './index.css';
@@ -21,8 +22,11 @@ const getNewStore = () => {
   return finalCreateStore(rootReducer, {});
 };
 
-ReactDOM.render(<Provider store={getNewStore()}>
-    {getRoutes()}
+ReactDOM.render(
+  <Provider store={getNewStore()}>
+    <Root>
+      {getRoutes()}
+    </Root>
   </Provider>, 
   document.getElementById('root')
 );
