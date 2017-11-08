@@ -17,7 +17,7 @@ const FavoriteChoice = props => {
     <div className={'favorite-choice'}>
       <span>{`What is your favorite ${favoriteType}?`} </span>
       <select name={favoriteType} onChange={triggerAction} value={currentChoice}>
-        <option value={''}>Select one</option>
+        <option value={''}>{'Select'}</option>
         {
           choices.map((choice, index) => (
             <option key={`choice-${index}`} value={choice}>{choice}</option>
