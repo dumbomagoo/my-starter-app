@@ -10,7 +10,7 @@ const NameInputBox = ({ callMeMaybe, name }) => {
   return (
     <div className="help">
       <span>{'Enter your name'}</span>
-      <input type="text" onChange={helpMe} value={name} />
+      <input type="search" onChange={helpMe} value={name} />
     </div>
   );
 };
