@@ -5,9 +5,9 @@ import Header from '../Header/Header'
 import VisitorInfo from '../VisitorInfo/VisitorInfo';
 import './App.scss';
 
-const App = ({ changeName, visitorInfo }) => (
+const App = ({ changeName, toggleMenu, visitorInfo, menuInfo }) => (
   <div className="App">
-    <Header name={visitorInfo.name} />
+    <Header name={visitorInfo.name} toggleMenu={toggleMenu} isMenuOpen={menuInfo.isMenuOpen} />
     <NameInputBox callMeMaybe={changeName} name={visitorInfo.name} />
     <Hello name={visitorInfo.name}></Hello>
     <VisitorInfo favorites={visitorInfo.favorites} />
@@ -16,6 +16,7 @@ const App = ({ changeName, visitorInfo }) => (
 
 App.defaultProps = {
   changeName: () => {},
+  toggleMenu: () => {},
   visitorInfo: {
     favorites: [],
     name: ''

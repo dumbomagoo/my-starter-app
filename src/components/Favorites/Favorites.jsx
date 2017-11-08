@@ -8,7 +8,11 @@ const Favorites = props => {
     visitorInfo: { 
       name, 
       favorites
-    }
+    },
+    menuInfo: {
+      isMenuOpen
+    },
+    toggleMenu
   } = props;
 
   const getDefaultChoiceFromProps = favoriteType => 
@@ -16,7 +20,7 @@ const Favorites = props => {
 
   return (
     <div>
-      <Header name={name} />
+      <Header name={name} toggleMenu={toggleMenu} isMenuOpen={isMenuOpen}/>
       <FavoriteChoice 
         action={favoriteAction}
         currentChoice={getDefaultChoiceFromProps('clam')}
