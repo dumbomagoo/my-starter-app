@@ -1,25 +1,64 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import HeaderButton from '../HeaderButton/HeaderButton';
 import './Header.scss'
 
-const Header = ({ name, isMenuOpen, toggleMenu }) => {
+export default class Header extends Component {
+  constructor(props) {
+    super(props);
 
-  // Dynamicall add menu-open class depending on whether the user attempted to open the menu.
-  const menuClasses = classnames('menu-wrapper', { 'menu-open': isMenuOpen });
+    this.toggleMenu = this.toggleMenu.bind(this);
 
-  return (
-    <div className={'header'}>
-      <span onClick={toggleMenu} className='menu-icon' />
-      <h1>{`Welcome ${name || 'You'}`}</h1>
-      <div className={menuClasses}>
-          <span onClick={toggleMenu} className='menu-close-icon' />
-          <HeaderButton label={'Home'} />
-          <HeaderButton label={'Profile'} path={'/profile'}/>
+    this.state = {
+      isMenuOpen: false
+    }
+  }
+
+  toggleMenu() {
+    this.setState({
+      isMenuOpen: !this.state.isMenuOpen
+    });
+  }
+
+  render() {
+    const { name } = this.props;
+    const { isMenuOpen } = this.state;
+
+    // Dynamically add menu-open class depending on whether the user attempted to open the menu.
+    const menuClasses = classnames('menu-wrapper', { 'menu-open': isMenuOpen });
+
+    return (
+      <div className={'header'}>
+        <span onClick={this.toggleMenu} className='menu-icon' />
+        <h1>{`Welcome ${name || 'You'}`}</h1>
+        <div className={menuClasses}>
+          <span onClick={this.toggleMenu} className='menu-close-icon' />
+          <HeaderButton label={'Home'} onClickAction={this.toggleMenu}/>
+          <HeaderButton label={'Profile'} path={'/profile'} onClickAction={this.toggleMenu}/>
+        </div>
       </div>
-    </div>
-)};
+    )
+  }
+}
+
+//
+// const Header = ({ name, isMenuOpen, toggleMenu }) => {
+//
+//   // Dynamically add menu-open class depending on whether the user attempted to open the menu.
+//   const menuClasses = classnames('menu-wrapper', { 'menu-open': isMenuOpen });
+//
+//   return (
+//     <div className={'header'}>
+//       <span onClick={toggleMenu} className='menu-icon' />
+//       <h1>{`Welcome ${name || 'You'}`}</h1>
+//       <div className={menuClasses}>
+//           <span onClick={toggleMenu} className='menu-close-icon' />
+//           <HeaderButton label={'Home'} onClickAction={toggleMenu}/>
+//           <HeaderButton label={'Profile'} path={'/profile'} onClickAction={toggleMenu}/>
+//       </div>
+//     </div>
+// )};
 
 Header.defaultProps = {
   isMenuOpen: false,
@@ -27,4 +66,4 @@ Header.defaultProps = {
   toggleMenu: () => {}
 };
 
-export default Header;
+// export default Header;

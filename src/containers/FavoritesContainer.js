@@ -3,16 +3,13 @@ import { bindActionCreators } from 'redux';
 
 import Favorites from '../components/Favorites/Favorites';
 import { update as updateFavorite } from '../actions/favoriteActions';
-import { toggleMenu } from '../actions/menuActions';
 
 const mapStateToProps = state => ({
-  visitorInfo: state.visitor,
-  menuInfo: state.menu
+  visitorInfo: state.visitor
 });
 
 const mapDispatchToProps = dispatch => ({
-  favoriteAction: bindActionCreators(updateFavorite, dispatch),
-  toggleMenu: bindActionCreators(toggleMenu, dispatch)
+  favoriteAction: bindActionCreators(updateFavorite, dispatch)
 });
 
 export default connect(
