@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import HeaderButton from '../HeaderButton/HeaderButton';
+import HeaderButton from './HeaderButton/HeaderButton';
 import './Header.scss'
 
 export default class Header extends Component {
