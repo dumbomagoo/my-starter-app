@@ -22,7 +22,7 @@ const FavoriteChoice = props => {
       <select name={favoriteType} onChange={triggerAction} value={currentChoice}>
         <option value={''}>{'Select'}</option>
         {
-          choices.map((choice, index) => (
+          choices.map((choice) => (
             <option key={`${choice}-choice`} value={choice}>{choice}</option>
           ))
         }
