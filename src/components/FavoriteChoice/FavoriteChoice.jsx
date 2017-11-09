@@ -1,4 +1,7 @@
 import React from 'react';
+import _ from 'lodash';
+
+// CSS
 import './FavoriteChoice.scss'
 
 const FavoriteChoice = props => {
@@ -10,7 +13,7 @@ const FavoriteChoice = props => {
   } = props;
 
   const triggerAction = event => {
-    action(event.target.value, favoriteType);
+    action(_.get(event, 'target.value', ''), favoriteType);
   };
  
   return (

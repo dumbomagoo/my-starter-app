@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
+// CSS
 import './HeaderButton.scss';
 
 const HeaderButton = ({ label, path, onClickAction }) => (

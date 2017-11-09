@@ -1,7 +1,11 @@
 import React from 'react';
+
+// Components
 import Hello from '../Hello/Hello';
 import NameInputBox from '../NameInputBox/NameInputBox';
 import VisitorInfo from '../VisitorInfo/VisitorInfo';
+
+// CSS
 import './App.scss';
 
 const App = ({ changeName, visitorInfo }) => (

@@ -1,4 +1,6 @@
 import React from 'react';
+
+// Component
 import FavoriteChoice from '../FavoriteChoice/FavoriteChoice';
 
 const Favorites = props => {

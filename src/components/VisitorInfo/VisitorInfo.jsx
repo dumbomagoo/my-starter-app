@@ -1,4 +1,6 @@
 import React from 'react';
+
+// CSS
 import './VisitorInfo.scss';
 
 const VisitorInfo = ({ favorites }) => (
