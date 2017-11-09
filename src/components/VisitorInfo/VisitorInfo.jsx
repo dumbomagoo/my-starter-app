@@ -12,7 +12,7 @@ const VisitorInfo = ({ favorites }) => (
         <div className={'border-magic'}>
         {
           Object.keys(favorites).map((item, index) => (
-            <div className={'favorite-row'} key={`favorite-${index}`}>
+            <div className={'favorite-row'} key={`favorites-${item}`}>
               <div className={'favorite-cell'}>{item}</div>
               <div className={'favorite-cell'}>{favorites[item]}</div>
             </div>

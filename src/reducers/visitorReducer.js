@@ -9,7 +9,8 @@ const initialState = {
 export default (state = initialState, action) => {
   const { 
     type, 
-    newFavorite,
+    favoriteType,
+    favoriteValue,
     name
   } = action;
 
@@ -21,7 +22,7 @@ export default (state = initialState, action) => {
       ...state,
       favorites: {
         ...state.favorites,
-        ...newFavorite
+        [favoriteType]: favoriteValue
       }
     };
     
