@@ -11,18 +11,16 @@ export default class Header extends Component {
   constructor(props) {
     super(props);
 
-    this.toggleMenu = this.toggleMenu.bind(this);
-
     this.state = {
       isMenuOpen: false
     }
   }
 
-  toggleMenu() {
+  toggleMenu = () => {
     this.setState({
       isMenuOpen: !this.state.isMenuOpen
     });
-  }
+  };
 
   render() {
     const { name } = this.props;
