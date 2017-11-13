@@ -1,5 +1,8 @@
 import React from 'react';
-import './FavoriteChoice.css'
+import _ from 'lodash';
+
+// CSS
+import './FavoriteChoice.scss'
 
 const FavoriteChoice = props => {
   const {
@@ -10,16 +13,16 @@ const FavoriteChoice = props => {
   } = props;
 
   const triggerAction = event => {
-    action(event.target.value, favoriteType);
+    action(_.get(event, 'target.value', ''), favoriteType);
   };
  
   return (
     <div className={'favorite-choice'}>
       <span>{`What is your favorite ${favoriteType}?`} </span>
       <select name={favoriteType} onChange={triggerAction} value={currentChoice}>
-        <option value={''}>Select one</option>
+        <option value={''}>{'Select'}</option>
         {
-          choices.map((choice, index) => (
+          choices.map((choice) => (
             <option key={`${choice}-choice`} value={choice}>{choice}</option>
           ))
         }

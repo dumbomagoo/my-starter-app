@@ -1,5 +1,7 @@
 import React from 'react';
-import './VisitorInfo.css';
+
+// CSS
+import './VisitorInfo.scss';
 
 const VisitorInfo = ({ favorites }) => (
   <div className={'visitor-info'}>
@@ -9,7 +11,7 @@ const VisitorInfo = ({ favorites }) => (
         <h2>{'Your Favorites'}</h2>
         <div className={'border-magic'}>
         {
-          Object.keys(favorites).map((item, index) => (
+          Object.keys(favorites).map((item) => (
             <div className={'favorite-row'} key={`favorites-${item}`}>
               <div className={'favorite-cell'}>{item}</div>
               <div className={'favorite-cell'}>{favorites[item]}</div>

@@ -1,16 +1,19 @@
 import React from 'react';
-import './NameInputBox.css';
+import _ from 'lodash';
+
+// CSS
+import './NameInputBox.scss';
 
 const NameInputBox = ({ callMeMaybe, name }) => {
   const helpMe = event => {
-    const newValue = event.target.value.replace(/[^a-zA-Z- ',]/g, '');
-    callMeMaybe(newValue);
+    const normalizedValue = _.get(event, 'target.value', '').replace(/[^a-zA-Z- ',]/g, '');
+    callMeMaybe(normalizedValue);
   };
 
   return (
     <div className="help">
       <span>{'Enter your name'}</span>
-      <input type="text" onChange={helpMe} value={name} />
+      <input type="search" onChange={helpMe} value={name} />
     </div>
   );
 };

@@ -1,13 +1,15 @@
 import React from 'react';
+
+// Components
 import Hello from '../Hello/Hello';
 import NameInputBox from '../NameInputBox/NameInputBox';
-import Header from '../Header/Header'
 import VisitorInfo from '../VisitorInfo/VisitorInfo';
-import './App.css';
+
+// CSS
+import './App.scss';
 
 const App = ({ changeName, visitorInfo }) => (
   <div className="App">
-    <Header name={visitorInfo.name} />
     <NameInputBox callMeMaybe={changeName} name={visitorInfo.name} />
     <Hello name={visitorInfo.name}></Hello>
     <VisitorInfo favorites={visitorInfo.favorites} />

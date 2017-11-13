@@ -1,5 +1,7 @@
 import React from 'react';
-import './Hello.css';
+
+// CSS
+import './Hello.scss';
 
 const Hello = ({ name }) => (
   <div className={'hello'} data-something="whatever">

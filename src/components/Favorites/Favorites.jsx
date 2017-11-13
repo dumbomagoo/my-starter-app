@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../Header/Header';
+
+// Component
 import FavoriteChoice from '../FavoriteChoice/FavoriteChoice';
 
 const Favorites = props => {
   const {
     favoriteAction,
-    visitorInfo: { 
-      name, 
+    visitorInfo: {
       favorites
     }
   } = props;
@@ -16,7 +16,6 @@ const Favorites = props => {
 
   return (
     <div>
-      <Header name={name} />
       <FavoriteChoice 
         action={favoriteAction}
         currentChoice={getDefaultChoiceFromProps('clam')}
@@ -42,7 +41,6 @@ const Favorites = props => {
 Favorites.defaultProps = {
   favoriteAction: () => {},
   visitorInfo: {
-    name: '',
     favorites: {}
   }
 };
