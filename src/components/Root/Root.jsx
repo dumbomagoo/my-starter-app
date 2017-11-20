@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 // Containers
 import HeaderContainer from '../../containers/HeaderContainer';
-import FooterContainer from '../../containers/FooterContainer';
+import Footer from '../Footer/Footer';
 
 const Root = ({ children }) => {
   return (
@@ -11,7 +11,7 @@ const Root = ({ children }) => {
       <div>
         <HeaderContainer />
         {children}
-        <FooterContainer />
+        <Footer />
       </div>
     </BrowserRouter>
   );
